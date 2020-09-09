@@ -1,0 +1,44 @@
+Codes used to build and deploy web app to App Engine.
+ 
+Open your cloud shell or local dev terminal
+ 
+1.	To check the list of active account type the command : 		
+		” gcloud auth list” 
+	and if no account exists yet you can login using the command : 
+		 “ gcloud auth login” 
+	which will open a web page for you to sing in your email and password.
+2.	You can list the project ID with this command: 
+		“gcloud config list project”
+	It is important to check and make sure that you are in the right project 
+	of choice in which you want to build your app.
+3.	To initialize app engine with your project and the chosen region: 
+		“gcloud app create –project=$DEVSHELL_PROJECT_ID”
+	This command will put the terminal in the interactive mode which will 
+	prompt you to select the zone in which you want your project to be located.
+4.	Clone or download your source code repository into the project folder. 
+	Example with github: 
+		“git clone https://github.com/GoogleCloudPlatform/python-docs-samples”
+	which will go and get you a sample app in the hello_world directory..
+5.	Move or Navigate to the source directory:
+		 “ cd python-docs-samples/appengine/standard_python3/hello_world”
+6.	Update and install a virtual environment with the command: 
+		“sudo apt-get update && sudo apt-get install virtualenv”
+		Press’Y’  then enter if prompted
+7.	Create a virtual environment : 
+		“ virtualenv –p python3 venv”
+8.	Activate the virtual environment : 
+		“source venv/bin.activate”
+9.	Install all the required packages defined in the requirement text file. : 
+		“pip install –r requirements.txt”
+10.	Run the application: 
+		“python main.py” 
+	to check if no error is reported or the app does not crash. 
+	Press “CTRL+C” to terminate the server running in the terminal.
+11.	Navigate to the source directory once more 
+		“ cd ~/python-docs-samples/appengine/standard_python3/hello_world”
+12.	Deploy your app on app engine with the command: 
+		“gcloud app deploy” 
+	and press “Y” and Enter when prompted to deploy your app to app engine.
+13.	Enter “gcloud app browse” command to view the app at the url provided in the shell.
+
+

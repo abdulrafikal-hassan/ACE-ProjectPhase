@@ -1,0 +1,14 @@
+Creating a virtual machine using the command line 
+
+1.	To view the list of all zones in the region  of your project, enter:
+		“gcloud compute zones list | grep us-central1”
+2.	To configure or set your zone, enter: 
+		“gcloud config set compute/zone us-central1-b”
+3.	To create a vm instance named “my-vm” in that zone enter:
+		“gcloud  compute instances create “my_vm” \
+		--machine-type “n1-standard-1” \
+		--image-project “debian-cloud” \
+		--iamge “debian-9-stretch-v20190213” \
+		--subnet “default”
+4.	Now that you have created the vm instance, to exit the command line enter: “exit”
+
